@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pferdesportanlage Lindenhof – Hamburg Nord</title>
+  <meta name="description" content="Pferdesportanlage Lindenhof in Tangstedt bei Hamburg – artgerechte Pferdehaltung, professioneller Reitunterricht, 40 ha Weide, 60 km Reitwege.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════
+       CSS RESET & BASE
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --green:  #1a3a2a;
+      --green2: #2a5040;
+      --green3: #355e4a;
+      --cream:  #f5f0e8;
+      --cream2: #ede8de;
+      --gold:   #c9a84c;
+      --gold2:  #b8933e;
+      --text:   #2c2c2c;
+      --light:  #fff;
+      --shadow: rgba(26,58,42,.15);
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+    p { line-height: 1.8; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
+    #nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      transition: background .4s, box-shadow .4s, padding .3s;
+      padding: 1.4rem 0;
+    }
+    #nav.scrolled {
+      background: rgba(26,58,42,.97);
+      box-shadow: 0 2px 20px rgba(0,0,0,.3);
+      padding: .8rem 0;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; color: var(--cream); letter-spacing: .05em;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .nav-logo .logo-icon { font-size: 1.6rem; }
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      color: rgba(245,240,232,.85); font-size: .88rem; letter-spacing: .08em;
+      text-transform: uppercase; transition: color .25s; font-weight: 700;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-burger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-burger span {
+      width: 26px; height: 2px; background: var(--cream); transition: .3s;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* mobile menu */
+    .nav-mobile {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(26,58,42,.98); z-index: 999; flex-direction: column;
+      align-items: center; justify-content: center; gap: 2.5rem;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--cream);
+      transition: color .25s;
+    }
+    .nav-mobile a:hover { color: var(--gold); }
+    .nav-mobile .close-btn {
+      position: absolute; top: 1.5rem; right: 2rem;
+      font-size: 2rem; color: var(--cream); cursor: pointer; background: none; border: none;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    #hero {
+      height: 100vh; min-height: 600px;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/backgroundarea/i71e91f9b06a1f89e/version/1739988468/image.jpg');
+      background-size: cover; background-position: center;
+      transform: scale(1.08); transition: transform 12s ease-out;
+    }
+    #hero:hover .hero-bg { transform: scale(1.0); }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(26,58,42,.78) 0%,
+        rgba(26,58,42,.55) 50%,
+        rgba(0,0,0,.40) 100%
+      );
+    }
+    .hero-content {
+      position: relative; z-index: 2; text-align: center; color: var(--cream);
+      padding: 2rem;
+    }
+    .hero-tag {
+      font-size: .78rem; letter-spacing: .3em; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 1.2rem;
+      display: inline-block; border-bottom: 1px solid var(--gold); padding-bottom: .4rem;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 700;
+      line-height: 1.1; margin-bottom: 1.2rem; text-shadow: 0 2px 30px rgba(0,0,0,.4);
+    }
+    .hero-title span { color: var(--gold); font-style: italic; }
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.2vw, 1.35rem); font-weight: 300;
+      max-width: 620px; margin: 0 auto 2.5rem; opacity: .9; letter-spacing: .03em;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: .7rem;
+      background: var(--gold); color: var(--green); padding: 1rem 2.2rem;
+      font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600;
+      border-radius: 2px; transition: background .25s, transform .25s;
+      box-shadow: 0 4px 20px rgba(201,168,76,.4);
+    }
+    .hero-cta:hover { background: var(--gold2); transform: translateY(-2px); }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      z-index: 2; color: var(--cream); opacity: .6; animation: bounce 2s infinite;
+      font-size: 1.5rem;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ═══════════════════════════════════════════
+       SVG DIVIDERS
+    ═══════════════════════════════════════════ */
+    .divider { overflow: hidden; line-height: 0; }
+    .divider svg { display: block; }
+    .divider-horse {
+      text-align: center; padding: 2rem 0; opacity: .18;
+    }
+    .divider-horse svg { display: inline-block; width: 120px; }
+
+    /* ═══════════════════════════════════════════
+       SECTION STYLES
+    ═══════════════════════════════════════════ */
+    section { padding: 6rem 0; }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-tag {
+      display: inline-block; font-size: .72rem; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--gold); font-weight: 700;
+      margin-bottom: .8rem;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem); color: var(--green); margin-bottom: 1rem;
+    }
+    .section-line {
+      width: 60px; height: 3px; background: var(--gold);
+      margin: 0 auto; border-radius: 2px;
+    }
+
+    /* ═══════════════════════════════════════════
+       WILLKOMMEN / ABOUT
+    ═══════════════════════════════════════════ */
+    #willkommen { background: var(--cream); }
+    .willkommen-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: center;
+    }
+    .willkommen-img-wrap {
+      position: relative;
+    }
+    .willkommen-img-wrap img {
+      width: 100%; height: 480px; object-fit: cover; border-radius: 3px;
+      box-shadow: 0 20px 60px var(--shadow);
+    }
+    .willkommen-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--green); color: var(--cream); padding: 1.2rem 1.6rem;
+      text-align: center; border-radius: 2px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.25);
+    }
+    .willkommen-badge .big { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold); }
+    .willkommen-badge .small { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
+    .willkommen-text h2 { color: var(--green); margin-bottom: 1rem; }
+    .willkommen-text .lead {
+      font-size: 1.15rem; font-style: italic; color: var(--green2);
+      margin-bottom: 1.5rem; line-height: 1.7;
+    }
+    .willkommen-text p { margin-bottom: 1rem; color: #444; }
+    .signature {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 1.4rem; color: var(--green2); margin-top: 1.8rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       ANLAGE FEATURES
+    ═══════════════════════════════════════════ */
+    #anlage {
+      background: var(--green);
+      color: var(--cream);
+    }
+    #anlage .section-title { color: var(--cream); }
+    #anlage .section-tag { color: var(--gold); }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;
+    }
+    .feature-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(201,168,76,.25);
+      padding: 2.5rem 2rem; border-radius: 3px; text-align: center;
+      transition: background .3s, transform .3s, border-color .3s;
+    }
+    .feature-card:hover {
+      background: rgba(255,255,255,.13); transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+    .feature-icon { font-size: 3rem; margin-bottom: 1.2rem; }
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem;
+      color: var(--gold); margin-bottom: .8rem;
+    }
+    .feature-card p { font-size: .9rem; opacity: .85; line-height: 1.7; }
+
+    .anlage-details {
+      margin-top: 4rem;
+    }
+    .anlage-cols {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+    }
+    .anlage-col { }
+    .anlage-col h4 {
+      font-family: 'Playfair Display', serif; color: var(--gold);
+      font-size: 1.1rem; margin-bottom: 1rem; padding-bottom: .6rem;
+      border-bottom: 1px solid rgba(201,168,76,.3);
+    }
+    .anlage-col ul { list-style: none; }
+    .anlage-col ul li {
+      padding: .45rem 0; font-size: .92rem; opacity: .88;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .anlage-col ul li::before { content: '✦'; color: var(--gold); font-size: .65rem; flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════════
+       PHILOSOPHIE (W-WÖRTER)
+    ═══════════════════════════════════════════ */
+    #philosophie { background: var(--cream2); }
+    .philosophie-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+    }
+    .philo-card {
+      background: var(--light); padding: 2rem 1.8rem; border-radius: 3px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      border-left: 4px solid var(--gold);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .philo-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.1); }
+    .philo-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem;
+      color: var(--green); margin-bottom: .7rem;
+    }
+    .philo-card p { font-size: .92rem; color: #555; line-height: 1.75; }
+
+    /* ═══════════════════════════════════════════
+       LEISTUNGEN
+    ═══════════════════════════════════════════ */
+    #leistungen { background: var(--cream); }
+    .leistungen-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+    }
+    .leistung-card {
+      background: var(--light); border-radius: 3px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08); transition: transform .3s, box-shadow .3s;
+    }
+    .leistung-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,.14); }
+    .leistung-head {
+      background: var(--green); padding: 1.8rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .leistung-head .icon { font-size: 2.2rem; }
+    .leistung-head h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream);
+    }
+    .leistung-body { padding: 1.8rem; }
+    .leistung-body p { font-size: .93rem; color: #555; margin-bottom: .8rem; }
+    .leistung-body .price {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      color: var(--green2); font-weight: 700; margin-top: 1.2rem;
+    }
+    .leistung-body .price span { font-size: .75rem; font-family: 'Lato', sans-serif; color: #888; }
+    .leistung-body ul { list-style: none; margin-top: .8rem; }
+    .leistung-body ul li { font-size: .88rem; padding: .3rem 0; color: #555; }
+    .leistung-body ul li::before { content: '✓ '; color: var(--green2); font-weight: 700; }
+
+    /* ═══════════════════════════════════════════
+       TEAM
+    ═══════════════════════════════════════════ */
+    #team { background: var(--green2); color: var(--cream); }
+    #team .section-title { color: var(--cream); }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;
+    }
+    .team-card {
+      background: rgba(255,255,255,.08); border-radius: 3px; overflow: hidden;
+      border: 1px solid rgba(201,168,76,.2);
+      transition: transform .3s, border-color .3s;
+    }
+    .team-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+    .team-img {
+      width: 100%; height: 260px; object-fit: cover; object-position: top;
+    }
+    .team-img-placeholder {
+      width: 100%; height: 260px; background: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; color: rgba(245,240,232,.25);
+    }
+    .team-info { padding: 1.6rem; }
+    .team-info h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem;
+      color: var(--gold); margin-bottom: .3rem;
+    }
+    .team-info .role {
+      font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+      opacity: .7; margin-bottom: .9rem;
+    }
+    .team-info p { font-size: .88rem; opacity: .83; line-height: 1.7; }
+    .team-contact {
+      display: inline-flex; align-items: center; gap: .4rem;
+      margin-top: .9rem; font-size: .82rem; color: var(--gold);
+      opacity: .9; transition: opacity .2s;
+    }
+    .team-contact:hover { opacity: 1; }
+
+    /* ═══════════════════════════════════════════
+       VERANSTALTUNGEN & KINDER
+    ═══════════════════════════════════════════ */
+    #events { background: var(--cream2); }
+    .events-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .events-box {
+      background: var(--light); padding: 2.5rem; border-radius: 3px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.07);
+    }
+    .events-box h3 {
+      font-family: 'Playfair Display', serif; color: var(--green);
+      font-size: 1.6rem; margin-bottom: 1.5rem; padding-bottom: 1rem;
+      border-bottom: 2px solid var(--gold);
+    }
+    .event-list { list-style: none; }
+    .event-list li {
+      display: flex; gap: 1rem; padding: .8rem 0;
+      border-bottom: 1px solid var(--cream2); font-size: .92rem; color: #444;
+      align-items: flex-start;
+    }
+    .event-date {
+      flex-shrink: 0; min-width: 75px; font-weight: 700; color: var(--green2);
+      font-size: .82rem;
+    }
+    .kinder-content p { font-size: .93rem; color: #555; margin-bottom: 1rem; line-height: 1.8; }
+    .kinder-highlight {
+      background: var(--green); color: var(--cream); padding: 1.2rem 1.5rem;
+      border-radius: 3px; margin-top: 1.5rem;
+    }
+    .kinder-highlight p { color: rgba(245,240,232,.9); margin: 0; }
+    .kinder-highlight strong { color: var(--gold); }
+
+    /* ═══════════════════════════════════════════
+       GALERIE
+    ═══════════════════════════════════════════ */
+    #galerie { background: var(--green); }
+    #galerie .section-title { color: var(--cream); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 220px;
+      gap: .5rem;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; border-radius: 2px; cursor: pointer;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-item:nth-child(5) { grid-column: span 2; }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,58,42,.7), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.92); align-items: center; justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 2px; }
+    .lightbox-close {
+      position: absolute; top: 2rem; right: 2rem;
+      font-size: 2.5rem; color: var(--cream); cursor: pointer;
+      background: none; border: none; line-height: 1;
+    }
+
+    /* ═══════════════════════════════════════════
+       KONTAKT
+    ═══════════════════════════════════════════ */
+    #kontakt { background: var(--cream); }
+    .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .kontakt-info h3 {
+      font-family: 'Playfair Display', serif; color: var(--green);
+      font-size: 1.8rem; margin-bottom: 2rem;
+    }
+    .info-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: .15rem; }
+    .info-item h4 {
+      font-family: 'Lato', sans-serif; font-size: .75rem;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: .3rem;
+    }
+    .info-item p, .info-item a { font-size: .95rem; color: #444; }
+    .info-item a:hover { color: var(--green2); }
+    .map-wrap {
+      border-radius: 3px; overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    }
+    .map-wrap iframe { width: 100%; height: 420px; border: 0; display: block; }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    footer {
+      background: var(--green); color: var(--cream);
+      padding: 3rem 0 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      justify-content: space-between; align-items: center;
+    }
+    .footer-brand .logo {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--cream);
+    }
+    .footer-brand p { font-size: .85rem; opacity: .65; margin-top: .4rem; }
+    .footer-social { display: flex; gap: 1rem; }
+    .social-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(201,168,76,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem; transition: background .25s, border-color .25s;
+    }
+    .social-btn:hover { background: rgba(201,168,76,.2); border-color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px; margin: 2rem auto 0; padding: 1.5rem 2rem 0;
+      border-top: 1px solid rgba(255,255,255,.1); font-size: .8rem; opacity: .5;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       FLOATING CTA
+    ═══════════════════════════════════════════ */
+    .float-cta {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 500;
+      display: flex; flex-direction: column; gap: .8rem; align-items: flex-end;
+    }
+    .float-btn {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .85rem 1.4rem; border-radius: 50px;
+      font-size: .9rem; font-weight: 700; transition: transform .25s, box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(0,0,0,.2); cursor: pointer;
+      text-decoration: none;
+    }
+    .float-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.3); }
+    .float-btn.anfragen {
+      background: var(--gold); color: var(--green);
+    }
+    .float-btn.whatsapp {
+      background: #25D366; color: #fff;
+    }
+    .float-btn .btn-icon { font-size: 1.1rem; }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .willkommen-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .willkommen-img-wrap img { height: 340px; }
+      .willkommen-badge { right: 1rem; bottom: -1rem; }
+      .events-cols { grid-template-columns: 1fr; }
+      .kontakt-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      section { padding: 4rem 0; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+      .gallery-item:nth-child(1) { grid-column: span 2; }
+      .gallery-item:nth-child(5) { grid-column: span 1; }
+    }
+    @media (max-width: 480px) {
+      .float-btn span.label { display: none; }
+      .float-btn { padding: .85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-icon">🐴</span>
+      Lindenhof
+    </a>
+    <ul class="nav-links">
+      <li><a href="#willkommen">Willkommen</a></li>
+      <li><a href="#anlage">Anlage</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#events">Veranstaltungen</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <button class="nav-burger" id="burgerBtn" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile" id="mobileNav">
+  <button class="close-btn" id="mobileClose">✕</button>
+  <a href="#willkommen" class="mobile-link">Willkommen</a>
+  <a href="#anlage" class="mobile-link">Anlage</a>
+  <a href="#leistungen" class="mobile-link">Leistungen</a>
+  <a href="#team" class="mobile-link">Team</a>
+  <a href="#events" class="mobile-link">Veranstaltungen</a>
+  <a href="#galerie" class="mobile-link">Galerie</a>
+  <a href="#kontakt" class="mobile-link">Kontakt</a>
+</div>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Pferdesportanlage · Hamburg Nord · Tangstedt</div>
+    <h1 class="hero-title">Pferdesportanlage<br><span>Lindenhof</span></h1>
+    <p class="hero-subtitle">Artgerechte Pferdehaltung, professioneller Reitunterricht und 40 ha Weide im Herzen des Hamburger Nordens</p>
+    <a href="#kontakt" class="hero-cta">
+      <span>✉</span> Jetzt Anfragen
+    </a>
+  </div>
+  <div class="hero-scroll">↓</div>
+</section>
+
+<!-- ═══════════════════ HORSE DIVIDER ═══════════════════ -->
+<div class="divider" style="background:var(--cream)">
+  <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 L1440,0 L1440,60 Q720,0 0,60 Z" fill="#f5f0e8"/>
+  </svg>
+</div>
+<div class="divider-horse">
+  <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" fill="var(--green)">
+    <path d="M100,15 C88,15 80,22 75,30 C70,38 68,45 70,52 C60,55 52,60 48,68 C44,76 46,85 50,88 L58,88 C60,80 64,76 72,74 C74,82 76,88 80,88 L88,88 C88,80 86,74 84,68 C90,66 96,65 100,65 C104,65 110,66 116,68 C114,74 112,80 112,88 L120,88 C124,88 126,82 128,74 C136,76 140,80 142,88 L150,88 C154,85 156,76 152,68 C148,60 140,55 130,52 C132,45 130,38 125,30 C120,22 112,15 100,15 Z M90,35 C92,32 96,30 100,30 C104,30 108,32 110,35 C112,38 112,42 108,44 C105,45 100,46 100,46 C100,46 95,45 92,44 C88,42 88,38 90,35 Z"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ WILLKOMMEN ═══════════════════ -->
+<section id="willkommen">
+  <div class="section-inner">
+    <div class="willkommen-grid">
+      <div class="willkommen-img-wrap">
+        <img 
+          src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ibcd69f0295fe7032/version/1739987502/image.jpg"
+          alt="Pferdesportanlage Lindenhof – Idyllische Anlage im Hamburger Norden"
+          loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&auto=format&fit=crop'"
+        >
+        <div class="willkommen-badge">
+          <div class="big">1971</div>
+          <div class="small">Gegründet</div>
+        </div>
+      </div>
+      <div class="willkommen-text">
+        <div class="section-tag">Herzlich Willkommen</div>
+        <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem">Ihr Zuhause<br>für Pferd &amp; Reiter</h2>
+        <p class="lead">Auf unserer idyllischen Anlage im Norden von Hamburg können Sie die schöne, besondere Zeit mit Ihrem Pferd mit artgerechter Haltung perfekt kombinieren.</p>
+        <p>Großzügige Hallen und Außenplätze, professioneller Unterricht, unsere ganzjährige 40 ha Weide direkt am Stall und 60 km herrliche Reitwege im Alster- und Forstgebiet bieten Ihnen hierzu optimale Bedingungen.</p>
+        <p>Als Familienbetrieb in 4. Generation verbinden wir Tradition mit modernem Stallmanagement. Unser Ziel: ein Ort, an dem Pferde glücklich sind und Menschen aufatmen können.</p>
+        <div class="signature">Tanja van den Eijnde-Pieper &amp; Team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ANLAGE ═══════════════════ -->
+<section id="anlage">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Unsere Anlage</div>
+      <h2 class="section-title">Erstklassige Einrichtungen<br>für Pferd &amp; Reiter</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Key Features -->
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏟️</div>
+        <h3>3 Reithallen</h3>
+        <p>Große Halle 20×80m, Unterrichtshalle 20×35m, überdachte Reit- &amp; Fahrhalle 30×100m – für jeden Bedarf das Richtige.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌿</div>
+        <h3>40 ha Weide</h3>
+        <p>Ganzjährige Weideflächen direkt am Stall. 365 Tage im Jahr, täglich 8 Stunden Auslauf für alle Pferde.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌳</div>
+        <h3>60 km Reitwege</h3>
+        <p>Herrliche Reitwege direkt ab Hof ins Alstergebiet, Tangstedter Forst und Rader Wald – Natur pur.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>4 Außenplätze</h3>
+        <p>Dressurviereck, Sandspringplatz, Rasen-Turnierplatz und Fahrplatz – alle mit Flutlicht ausgestattet.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🐴</div>
+        <h3>90 Boxen</h3>
+        <p>35 Paddockboxen und 55 Innenboxen, hell und freundlich mit guter Luftzirkulation und Selbsttränken.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">☀️</div>
+        <h3>Premium Service</h3>
+        <p>Solarium, Waschanlagen, einbruchsichere Sattelkammern, Casino, Terrasse und Grillmöglichkeiten.</p>
+      </div>
+    </div>
+
+    <!-- Detailed Lists -->
+    <div class="anlage-details">
+      <div class="anlage-cols">
+        <div class="anlage-col">
+          <h4>Hallen</h4>
+          <ul>
+            <li>Reithalle 20×80 m</li>
+            <li>Kleine Halle für Reitunterricht 20×35 m</li>
+            <li>Reit- &amp; Fahrhalle überdacht 30×100 m</li>
+          </ul>
+        </div>
+        <div class="anlage-col">
+          <h4>Außenplätze</h4>
+          <ul>
+            <li>Dressurviereck 20×60 m mit Wattboden &amp; Flutlicht</li>
+            <li>Springplatz (Sand) 30×70 m mit Flutlicht</li>
+            <li>Spring- &amp; Turnierplatz (Rasen) 70×100 m</li>
+            <li>Fahrplatz 40×100 m</li>
+            <li>Galoppbahn 300 m</li>
+            <li>Teich / Wasserstelle</li>
+          </ul>
+        </div>
+        <div class="anlage-col">
+          <h4>Boxen &amp; Service</h4>
+          <ul>
+            <li>35 Paddockboxen</li>
+            <li>55 Innenboxen (teilw. mit Fenster)</li>
+            <li>Solarium &amp; Waschanlagen</li>
+            <li>Einbruchsichere Sattelkammern</li>
+            <li>Casino &amp; Terrasse</li>
+            <li>Richterturm für Turniere</li>
+          </ul>
+        </div>
+        <div class="anlage-col">
+          <h4>Regelmäßige Veranstaltungen</h4>
+          <ul>
+            <li>Übungs- und Hausturniere (Winter)</li>
+            <li>Reit- &amp; Fahrturniere bis Kl. S</li>
+            <li>Dressur- &amp; Springreitlehrgänge</li>
+            <li>FN-Motivations- &amp; Leistungsabzeichen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Horse Divider -->
+<div style="background:var(--green);text-align:center;padding:.5rem 0">
+  <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+    <path d="M0,40 Q360,0 720,20 Q1080,40 1440,0 L1440,40 Z" fill="#f7f4ef"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════ PHILOSOPHIE ═══════════════════ -->
+<section id="philosophie">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Unsere Werte</div>
+      <h2 class="section-title">Wohlfühl-Philosophie</h2>
+      <div class="section-line"></div>
+      <p style="max-width:680px;margin:1.5rem auto 0;color:#555;line-height:1.8">Wichtig: Den uns anvertrauten Pferden den Lebensraum zu geben, wo sie sich wohlfühlen und der ihrem Ursprung so weit wie möglich entgegenkommt.</p>
+    </div>
+    <div class="philosophie-grid">
+      <div class="philo-card">
+        <h3>🌅 Weite</h3>
+        <p>Ankommen – Aufatmen – Auftanken! Unser Hof liegt zwischen weitläufigen Koppeln mit viel Platz für Pferde und Pferdeliebhaber zur Bewegung und um sich frei zu fühlen.</p>
+      </div>
+      <div class="philo-card">
+        <h3>🚶 Weideschritt</h3>
+        <p>Bei der langsamen, natürlichen Vorwärtsbewegung nimmt das Pferd eine optimale Haltung ein: Die Oberlinie wird gedehnt, die Wirbelsäule entlastet und Verspannungen gelöst.</p>
+      </div>
+      <div class="philo-card">
+        <h3>💨 Wind &amp; Wetter</h3>
+        <p>365 Tage im Jahr, 8 Std. pro Tag genießen unsere Pferde Auslauf auf großen, trockenen Weideflächen. Viel frische Luft und Bewegung für Gesundheit bis ins hohe Alter.</p>
+      </div>
+      <div class="philo-card">
+        <h3>💧 Wasser &amp; Weideheulage</h3>
+        <p>Neben Tränken in Box und Weide steht den Pferden ein Teich zur Verfügung. Unser hochwertiges Raufutter kommt überwiegend aus eigener Ernte.</p>
+      </div>
+      <div class="philo-card">
+        <h3>🐎 Wälzen &amp; Wiehern</h3>
+        <p>Grundbedürfnisse des Pferdes: In der großen Herde entstehen soziale Partnerschaften für Fellpflege, Spiel und seelische Ausgeglichenheit.</p>
+      </div>
+      <div class="philo-card">
+        <h3>🎯 Weiterkommen</h3>
+        <p>Ein Pferd hat ein Grundrecht auf professionelle Ausbildung. Unser Reitlehrerteam unterstützt Pferd und Reiter zur regelmäßigen Reflexion und Gesunderhaltung.</p>
+      </div>
+      <div class="philo-card">
+        <h3>💛 Wertschätzung</h3>
+        <p>Ein positiver und respektvoller Umgang mit Pferden und Menschen – unabhängig vom Leistungsstand – ist unsere Basis für ein zufriedenes Miteinander.</p>
+      </div>
+      <div class="philo-card">
+        <h3>🤝 Wir-Gefühl</h3>
+        <p>Eine nette Stallgemeinschaft, ein harmonierendes Reitlehrer-Team und professionelle Versorgung zeichnen unseren Stall aus. Die Basis für all das: Vertrauen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ LEISTUNGEN ═══════════════════ -->
+<section id="leistungen">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Unser Angebot</div>
+      <h2 class="section-title">Leistungen &amp; Preise</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="leistungen-grid">
+      <div class="leistung-card">
+        <div class="leistung-head">
+          <div class="icon">🏠</div>
+          <h3>Innenbox</h3>
+        </div>
+        <div class="leistung-body">
+          <p>Hell und freundlich mit guter Luftzirkulation und Selbsttränke. Ausreichend Sozialkontakte zu anderen Pferden. Teilweise mit Fenster.</p>
+          <div class="price">620,– € <span>monatlich inkl. MwSt.</span></div>
+          <ul>
+            <li>Fütterung 2–3× täglich (Hafer/Pellets)</li>
+            <li>2–3× täglich Heulage</li>
+            <li>Täglich frische Stroheinstreu</li>
+            <li>Regelmäßiges Ausmisten</li>
+            <li>Täglicher Weidegang Mo–So</li>
+            <li>Nutzung der gesamten Anlage</li>
+          </ul>
+        </div>
+      </div>
+      <div class="leistung-card">
+        <div class="leistung-head">
+          <div class="icon">🌤️</div>
+          <h3>Paddockbox</h3>
+        </div>
+        <div class="leistung-body">
+          <p>Zusätzlicher direkter Zugang zum Außenpaddock (3×6 m), befestigter Untergrund, täglich gefegt. Wahlweise Tür schließbar bei Regen.</p>
+          <div class="price">700,– € <span>monatlich inkl. MwSt.</span></div>
+          <ul>
+            <li>Alles aus Innenbox inklusive</li>
+            <li>Paddock 3×6 m mit Aussicht</li>
+            <li>Sonnenuntergang im Sommer gratis 🌅</li>
+          </ul>
+        </div>
+      </div>
+      <div class="leistung-card">
+        <div class="leistung-head">
+          <div class="icon">🐴</div>
+          <h3>Ponybox</h3>
+        </div>
+        <div class="leistung-body">
+          <p>Die ideale Unterkunft für kleinere Pferde und Ponys – artgerecht und liebevoll, mit denselben hohen Standards wie alle unsere Boxen.</p>
+          <div class="price">550,– € <span>monatlich inkl. MwSt.</span></div>
+          <ul>
+            <li>Alle Leistungen der Innenbox</li>
+            <li>Täglich Weidegang inklusive</li>
+            <li>40 ha Weideland am Haus</li>
+          </ul>
+        </div>
+      </div>
+      <div class="leistung-card">
+        <div class="leistung-head">
+          <div class="icon">✨</div>
+          <h3>Extras</h3>
+        </div>
+        <div class="leistung-body">
+          <p>Zusätzliche Leistungen für Ihren Komfort und den Ihres Pferdes.</p>
+          <ul>
+            <li>Hängerstellplatz: 40,– €/Monat</li>
+            <li>Späne auf Anfrage</li>
+            <li>Solarium-Nutzung</li>
+            <li>Nutzung aller Reithallen</li>
+            <li>Nutzung aller Außenplätze</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TEAM ═══════════════════ -->
+<section id="team">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Unsere Experten</div>
+      <h2 class="section-title">Das Lindenhof-Team</h2>
+      <div class="section-line" style="background:var(--gold)"></div>
+      <p style="max-width:600px;margin:1.5rem auto 0;opacity:.8;line-height:1.8">Familiäres Ambiente, immer ein Lächeln füreinander und sich gegenseitig helfen – das zeichnet den Lindenhof aus.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img 
+          class="team-img" 
+          src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ie1a993ad08b7536a/version/1768549777/image.jpg"
+          alt="Tanja van den Eijnde-Pieper, Inhaberin"
+          loading="lazy"
+          onerror="this.onerror=null; this.parentNode.querySelector('.team-img').style.display='none'; this.parentNode.querySelector('.team-img-placeholder').style.display='flex';"
+        >
+        <div class="team-info">
+          <h3>Tanja van den Eijnde-Pieper</h3>
+          <div class="role">Inhaberin &amp; Geschäftsführerin</div>
+          <p>Aufgewachsen auf dem Lindenhof übernahm Tanja 2012 den Betrieb in 4. Generation. Zert. Managerin für Pferdebetriebe (FN/DLG, 2015), Business Coach und leidenschaftliche Reiterin.</p>
+          <a href="tel:+4917662346793" class="team-contact">📞 0176 62 34 67 93</a>
+        </div>
+      </div>
+      <div class="team-card">
+        <img 
+          class="team-img" 
+          src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i2f82d96f001ac868/version/1565771279/image.jpg"
+          alt="Kristiane Hartwig, Pferdewirtschaftsmeisterin"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        >
+        <div class="team-info">
+          <h3>Kristiane Hartwig</h3>
+          <div class="role">Pferdewirtschaftsmeisterin FN &amp; Sportlehrerin</div>
+          <p>Seit 2013 Dressurausbilderin bis Klasse S. Harmonie zwischen Pferd und Reiter steht für sie über dem Turniererfolg.</p>
+          <a href="tel:+4917939059700" class="team-contact">📞 0179 390 59 70</a>
+        </div>
+      </div>
+      <div class="team-card">
+        <img 
+          class="team-img" 
+          src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i186d2d97562ab6d0/version/1588439082/image.jpg"
+          alt="Cathrin Kirchner-Salzmann, Vielseitigkeitsreiterin"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        >
+        <div class="team-info">
+          <h3>Cathrin Kirchner-Salzmann</h3>
+          <div class="role">Int. Vielseitigkeitsreiterin &amp; Landestrainerin</div>
+          <p>Goldenes Reitabzeichen, Landestrainerin Hamburg Vielseitigkeit. Springunterricht mittwochabends vom Cavaletti bis Kl. S. Ihre Karriere begann als Kind auf dem Lindenhof!</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img 
+          class="team-img" 
+          src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ib1a8258b750235b6/version/1565771333/image.jpg"
+          alt="Peer Ahnert, Pferdewirtschaftsmeister"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        >
+        <div class="team-info">
+          <h3>Peer Ahnert</h3>
+          <div class="role">Pferdewirtschaftsmeister FN &amp; Bereiter</div>
+          <p>Seit 2011 regelmäßige Lehrgänge in Dressur und Springen. Ausgebildet bei Ian Stark in Schottland, Meisterprüfung mit Auszeichnung. Ausbildung bis Kl. S in Dressur, Springen &amp; Vielseitigkeit.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-img-placeholder" style="display:none">🤸</div>
+        <img 
+          class="team-img" 
+          src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ibea1e31cc1b08c76/version/1565771014/image.jpg"
+          alt="Sabine Diercks, Trainerin A"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        >
+        <div class="team-info">
+          <h3>Sabine Diercks</h3>
+          <div class="role">Trainerin A – Jugendunterricht</div>
+          <p>Ehemalige Bereiterin der Hengste beim Redefiner Landesgestüt und Kadertrainerin Mecklenburg. Leitet jeden Samstag 10–12 Uhr das Jugendtraining des RV Tangstedt.</p>
+        </div>
+      </div>
+      <div class="team-card" style="background: rgba(255,255,255,.04); display:flex; flex-direction:column; justify-content:center; align-items:center; padding:3rem 2rem; text-align:center; min-height:360px">
+        <div style="font-size:3rem;margin-bottom:1rem">🌟</div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--gold);font-size:1.2rem;margin-bottom:.8rem">Das Stallteam</h3>
+        <p style="font-size:.9rem;opacity:.8;line-height:1.7">Unsere langjährigen Mitarbeiter kennen alle Pferde „aus dem Eff-Eff" und sorgen täglich für ihr Wohlergehen – mit Herzblut und Professionalität.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ EVENTS + KINDER ═══════════════════ -->
+<section id="events">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Erleben</div>
+      <h2 class="section-title">Veranstaltungen &amp; Jugend</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="events-cols">
+      <div class="events-box">
+        <h3>📅 Veranstaltungen 2026</h3>
+        <ul class="event-list">
+          <li><span class="event-date">01.01.</span> Jump &amp; Run mit Neujahrsglitzern</li>
+          <li><span class="event-date">11.01.</span> Hundeaktivtag</li>
+          <li><span class="event-date">21./22.02.</span> Peer Ahnert – Dressur &amp; Springlehrgang</li>
+          <li><span class="event-date">28.02.</span> Dressurlehrgang</li>
+          <li><span class="event-date">März</span> Indoor-Geländetraining</li>
+          <li><span class="event-date">22.03.</span> Hundeaktivtag</li>
+          <li><span class="event-date">25./26.04.</span> „Zauber der Freiarbeit" – Lehrgang mit Maja Hegge</li>
+          <li><span class="event-date">09.05.</span> Pferdewaage ab 17 Uhr</li>
+          <li><span class="event-date">06–10.07.</span> Reitabzeichenwoche</li>
+          <li><span class="event-date">Sep.</span> Working Equitation Lehrgang</li>
+          <li><span class="event-date">08./09.11.</span> Peer Ahnert – Dressur &amp; Springlehrgang</li>
+          <li><span class="event-date">06.12.</span> Weihnachtsreiten</li>
+        </ul>
+        <p style="margin-top:1.2rem;font-size:.82rem;color:#888">Weitere Veranstaltungen beim <a href="https://www.rv-tangstedt.de/veranstaltungen/" target="_blank" style="color:var(--green2)">RV Tangstedt e.V.</a></p>
+      </div>
+      <div class="events-box">
+        <h3>🧒 Kinder &amp; Jugend</h3>
+        <div class="kinder-content">
+          <p>Als Eltern von fünf Töchtern (Jg. 2002–2010) liegen uns Kinder und Jugendliche besonders am Herzen. Für Familien ist unser Hof oftmals ein zweites Zuhause.</p>
+          <p>Gemeinsame Ausritte und Turniere, Lehrgänge, im Sommer ohne Sattel in den Teich flitzen – das gehört zu einer unbeschwerten Lindenhof-Kindheit dazu.</p>
+          <div class="kinder-highlight">
+            <p><strong>Jugendunterricht:</strong> Jeden Samstag 10–12 Uhr unter Leitung von Sabine Diercks (Trainerin A)</p>
+          </div>
+          <div class="kinder-highlight" style="margin-top:1rem">
+            <p><strong>Reitabzeichenwoche:</strong> Jährlich in der 1. Woche der Sommerferien – für Kinder und Jugendliche (R6–R10)</p>
+          </div>
+          <div class="kinder-highlight" style="margin-top:1rem">
+            <p><strong>Stroh-Übernachtung:</strong> Unvergessliches Camp-Erlebnis für Kinder und Jugendliche in den Sommerferien</p>
+          </div>
+          <p style="margin-top:1.2rem;font-size:.88rem;color:#555">Der Reiterverein Tangstedt organisiert zusätzliche Events: Ausflüge zum Derby und vieles mehr.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ GALERIE ═══════════════════ -->
+<section id="galerie">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Impressionen</div>
+      <h2 class="section-title" style="color:var(--cream)">Galerie</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i754a5dd66c0f383e/version/1617641613/image.jpg" 
+             alt="Pferdesportanlage Lindenhof" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop'">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/if416eee65ba6ad89/version/1617641613/image.jpg" 
+             alt="Reithalle Lindenhof" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&auto=format&fit=crop'">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ibc474d6955cac98a/version/1617641613/image.jpg" 
+             alt="Weide Lindenhof" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1530088943190-1727b37a4c62?w=600&auto=format&fit=crop'">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ie494294aafb97347/version/1617641613/image.jpg" 
+             alt="Springplatz Lindenhof" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1499590633038-3a22c51ca8ab?w=600&auto=format&fit=crop'">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i393d91f8f52afc3b/version/1617641613/image.jpg" 
+             alt="Pferde auf der Koppel" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=800&auto=format&fit=crop'">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i5f2198f323b2bca6/version/1617641613/image.jpg" 
+             alt="Reiten bei Sonnenuntergang" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=600&auto=format&fit=crop'">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ib833c4d1e24f794f/version/1617641613/image.jpg" 
+             alt="Stallanlage" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1566963401020-d9d9b6cdda1e?w=600&auto=format&fit=crop'">
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i115199b8dfe00417/version/1617641613/image.jpg" 
+             alt="Dressurviereck" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1511165030972-5ff32fd6c5b1?w=600&auto=format&fit=crop'">
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ═══════════════════ KONTAKT ═══════════════════ -->
+<section id="kontakt">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Ihr Weg zu uns</div>
+      <h2 class="section-title">Kontakt &amp; Anfahrt</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="kontakt-grid">
+      <div class="kontakt-info">
+        <h3>Wir freuen uns<br>auf Ihren Besuch</h3>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Adresse</h4>
+            <p>Pferdesportanlage Lindenhof<br>Familie van den Eijnde<br>Lindenallee 17<br>22889 Tangstedt bei Hamburg</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>Telefon</h4>
+            <a href="tel:+4917662346793">0176 62 34 67 93</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h4>E-Mail</h4>
+            <p>info@pferdesport-lindenhof.de</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🌐</div>
+          <div>
+            <h4>Internet</h4>
+            <a href="https://www.pferdesport-lindenhof.de" target="_blank">www.pferdesport-lindenhof.de</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🔗</div>
+          <div>
+            <h4>Social Media</h4>
+            <p>
+              <a href="https://www.facebook.com" target="_blank" style="color:var(--green2);margin-right:1rem">Facebook</a>
+              <a href="https://www.instagram.com" target="_blank" style="color:var(--green2)">Instagram</a>
+            </p>
+          </div>
+        </div>
+        <div style="margin-top:2rem">
+          <a href="tel:+4917662346793" class="hero-cta" style="display:inline-flex;background:var(--green);color:var(--cream)">
+            📞 Jetzt anrufen
+          </a>
+          <a href="https://wa.me/4917662346793" target="_blank" class="hero-cta" style="display:inline-flex;background:#25D366;color:#fff;margin-left:1rem">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.8!2d10.0756!3d53.7361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zLindenallee+17%2C+22889+Tangstedt!5e0!3m2!1sde!2sde!4v1!5m2!1sde!2sde&q=Lindenallee+17,+22889+Tangstedt" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Pferdesportanlage Lindenhof – Karte">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">🐴 Pferdesportanlage Lindenhof</div>
+      <p>Lindenallee 17 · 22889 Tangstedt · Hamburg Nord</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com" target="_blank" class="social-btn" aria-label="Facebook" style="color:var(--cream)">f</a>
+      <a href="https://www.instagram.com" target="_blank" class="social-btn" aria-label="Instagram" style="color:var(--cream)">📷</a>
+      <a href="https://wa.me/4917662346793" target="_blank" class="social-btn" aria-label="WhatsApp" style="color:var(--cream)">💬</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Pferdesportanlage Lindenhof · Familie van den Eijnde</span>
+    <span>Lindenallee 17 · 22889 Tangstedt</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════ FLOATING CTA ═══════════════════ -->
+<div class="float-cta">
+  <a href="https://wa.me/4917662346793" target="_blank" class="float-btn whatsapp">
+    <span class="btn-icon">💬</span>
+    <span class="label">WhatsApp</span>
+  </a>
+  <a href="#kontakt" class="float-btn anfragen">
+    <span class="btn-icon">✉</span>
+    <span class="label">Jetzt Anfragen</span>
+  </a>
+</div>
+
+<!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
+<script>
+  // NAV scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+  });
+
+  // Burger menu
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const closeBtn = document.getElementById('mobileClose');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  closeBtn.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+
+  // Lightbox
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+
+  // Parallax effect on hero background
+  const heroBg = document.getElementById('heroBg');
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY < window.innerHeight) {
+        heroBg.style.transform = `scale(1.08) translateY(${scrollY * 0.3}px)`;
+      }
+    }, { passive: true });
+  }
+
+  // Intersection Observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feature-card, .philo-card, .leistung-card, .team-card, .gallery-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity .6s ease, transform .6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
