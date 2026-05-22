@@ -117,7 +117,7 @@
        HERO
     ═══════════════════════════════════════════ */
     #hero {
-      height: 100vh; min-height: 600px;
+      height: 100svh; min-height: 500px;
       position: relative; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
     }
@@ -563,6 +563,129 @@
       .float-btn span.label { display: none; }
       .float-btn { padding: .85rem; }
     }
+
+    /* ═══════════════════════════════════════════
+       MOBILE OPTIMIZATION (max-width: 768px)
+    ═══════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      /* Nav */
+      .nav-logo img { height: 48px; }
+
+      /* Hero */
+      .hero-title { font-size: clamp(2rem, 9vw, 2.8rem); }
+      .hero-subtitle { font-size: .95rem; padding: 0 .5rem; }
+      .hero-cta { padding: .85rem 1.6rem; font-size: .95rem; }
+
+      /* Sections */
+      section { padding: 3.5rem 0; }
+      .section-inner { padding: 0 1rem; }
+      .section-title { font-size: clamp(1.6rem, 6vw, 2rem); }
+      .section-header { margin-bottom: 2.5rem; }
+
+      /* Willkommen stats row */
+      .willkommen-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .willkommen-stats > div { text-align: center; }
+      .willkommen-img-wrap img { height: 260px; }
+      .willkommen-badge {
+        position: static;
+        display: inline-block;
+        margin-top: 1rem;
+        border-radius: 3px;
+      }
+
+      /* Features grid: single column on small screens */
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-card { padding: 1.8rem 1.5rem; }
+
+      /* Anlage cols */
+      .anlage-cols { grid-template-columns: 1fr; }
+
+      /* Philosophie grid */
+      .philosophie-grid { grid-template-columns: 1fr; }
+      .philo-card { padding: 1.5rem; }
+
+      /* Leistungen grid */
+      .leistungen-grid { grid-template-columns: 1fr; }
+
+      /* Team grid */
+      .team-grid { grid-template-columns: 1fr; }
+      .team-img { height: 220px; }
+
+      /* Events */
+      .events-box { padding: 1.5rem; }
+      .events-box h3 { font-size: 1.3rem; }
+
+      /* Gallery */
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; }
+      .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+      .gallery-item:nth-child(5) { grid-column: span 1; }
+
+      /* Kontakt buttons */
+      .kontakt-cta-row {
+        display: flex;
+        flex-direction: column;
+        gap: .8rem;
+      }
+      .kontakt-cta-row .hero-cta {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0 !important;
+      }
+
+      /* Map */
+      .map-wrap iframe { height: 280px; }
+
+      /* Footer */
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+      .footer-bottom { flex-direction: column; gap: .3rem; }
+
+      /* Float CTA — move up a bit so it doesn't overlap content */
+      .float-cta { bottom: 1.2rem; right: 1rem; gap: .5rem; }
+      .float-btn span.label { display: none; }
+      .float-btn { padding: .85rem; border-radius: 50%; width: 52px; height: 52px; justify-content: center; }
+      .float-btn .btn-icon { font-size: 1.3rem; }
+    }
+
+    /* ═══════════════════════════════════════════
+       MOBILE OPTIMIZATION (max-width: 480px)
+    ═══════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      /* Even smaller padding */
+      .section-inner { padding: 0 .85rem; }
+      section { padding: 3rem 0; }
+
+      /* Hero */
+      .hero-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+      .hero-content { padding: 1rem; }
+
+      /* Feature cards - always single column */
+      .features-grid { grid-template-columns: 1fr; }
+
+      /* Gallery - full width items */
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+      }
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(5) { grid-column: span 1; grid-row: span 1; }
+
+      /* Leistung card body padding */
+      .leistung-body { padding: 1.2rem; }
+      .leistung-head { padding: 1.2rem; }
+
+      /* Team card text */
+      .team-info { padding: 1.2rem; }
+
+      /* Events box */
+      .event-date { min-width: 60px; font-size: .8rem; }
+
+      /* Services section headings (inline styles override) */
+      .livecam-heading, .services-heading { font-size: 1.8rem !important; }
+    }
   </style>
 </head>
 <body>
@@ -656,7 +779,7 @@
         <p class="lead">Auf unserer idyllischen Anlage im Norden von Hamburg können Sie die schöne, besondere Zeit mit Ihrem Pferd mit artgerechter Haltung perfekt kombinieren.</p>
         <p>Großzügige Hallen und Außenplätze, professioneller Unterricht, unsere ganzjährige 40 ha Weide direkt am Stall und 60 km herrliche Reitwege im Alster- und Forstgebiet bieten Ihnen hierzu optimale Bedingungen.</p>
         <p>Als Familienbetrieb in 4. Generation verbinden wir Tradition mit modernem Stallmanagement. Unser Ziel: ein Ort, an dem Pferde glücklich sind und Menschen aufatmen können.</p>
-        <div style="display:flex;gap:2rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--cream2);">
+        <div class="willkommen-stats" style="display:flex;gap:2rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--cream2);">
           <div style="text-align:center;">
             <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);">90</div>
             <div style="font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#777;">Boxen</div>
@@ -1094,7 +1217,7 @@
       <h2 style="color:#f5f0e8;font-family:'Playfair Display',serif;font-size:2rem;margin:0 0 .5rem;">Ausrittswetter heute</h2>
       <p style="color:rgba(245,240,232,.7);font-size:.95rem;margin:0;">Die Pferde kommen täglich um 15:00 Uhr herein — plant euren Ausritt mit dem aktuellen Wetter.</p>
     </div>
-    <div id="wetter-widget" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;">
+    <div id="wetter-widget" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;">
       <div style="background:rgba(245,240,232,.07);border:1px solid rgba(201,168,76,.25);border-radius:12px;padding:1.5rem;text-align:center;">
         <div style="font-size:2.5rem;margin-bottom:.4rem;" id="w-now-icon">⏳</div>
         <div style="color:#c9a84c;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem;">Jetzt</div>
@@ -1127,7 +1250,7 @@
 <section id="livecam" style="background:#f5f0e8; padding:5rem 0;">
   <div class="section-inner" style="max-width:900px;margin:0 auto;padding:0 2rem;text-align:center;">
     <div style="display:inline-block;background:#0e2b18;color:#c9a84c;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:1.5rem;">✦ Demnächst ✦</div>
-    <h2 style="font-family:'Playfair Display',serif;color:#0e2b18;font-size:2.6rem;margin:0 0 1rem;line-height:1.2;">Live-Kamera<br><span style="color:#c9a84c;">direkt vom Lindenhof</span></h2>
+    <h2 class="livecam-heading" style="font-family:'Playfair Display',serif;color:#0e2b18;font-size:clamp(1.8rem,6vw,2.6rem);margin:0 0 1rem;line-height:1.2;">Live-Kamera<br><span style="color:#c9a84c;">direkt vom Lindenhof</span></h2>
     <p style="color:#555;font-size:1.05rem;line-height:1.7;max-width:620px;margin:0 auto 2.5rem;">Bald können Sie jederzeit einen Blick auf Ihre Liebsten werfen — ob morgens auf der Weide, beim Fressen oder beim Toben in der Herde. Ihr Pferd, immer nur einen Klick entfernt.</p>
     <div style="background:#0e2b18;border-radius:16px;padding:3rem 2rem;position:relative;overflow:hidden;max-width:560px;margin:0 auto;">
       <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(201,168,76,.08) 0%, transparent 70%);"></div>
@@ -1144,6 +1267,30 @@
 </section>
 
 <style>
+/* Wetter widget mobile */
+@media (max-width: 480px) {
+  #wetter-widget { grid-template-columns: 1fr 1fr !important; }
+  #services > div > div:nth-child(2) { grid-template-columns: 1fr 1fr !important; }
+  .willkommen-badge { position: static !important; right: auto !important; bottom: auto !important; display: block; margin-top: 1rem; }
+  .willkommen-img-wrap { overflow: visible !important; }
+  #wetter { padding: 2.5rem 0 !important; }
+  #livecam { padding: 3rem 0 !important; }
+  #services { padding: 3rem 0 !important; }
+  #wetter .section-inner, #livecam .section-inner { padding: 0 1rem !important; }
+  #services > div { padding: 0 1rem !important; }
+  /* Kontakt CTA buttons full-width on mobile */
+  .kontakt-cta-row { flex-direction: column; }
+  .kontakt-cta-row .hero-cta { width: 100%; justify-content: center; text-align: center; }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  #wetter-widget { grid-template-columns: repeat(2, 1fr) !important; }
+  #services > div > div:nth-child(2) { grid-template-columns: repeat(2, 1fr) !important; }
+  #wetter { padding: 3rem 0 !important; }
+  #livecam { padding: 3.5rem 0 !important; }
+  #services { padding: 3.5rem 0 !important; }
+  #wetter .section-inner, #livecam .section-inner { padding: 0 1rem !important; }
+  #services > div { padding: 0 1rem !important; }
+}
 @keyframes pulse-dot {
   0%,100%{opacity:.3;transform:scale(.8)}
   50%{opacity:1;transform:scale(1.2)}
@@ -1198,11 +1345,11 @@
         <span style="width:8px;height:8px;border-radius:50%;background:#c9a84c;animation:pulse-dot 1.4s ease-in-out infinite;"></span>
         <span style="color:#c9a84c;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;">Demnächst verfügbar</span>
       </div>
-      <h2 style="font-family:'Playfair Display',serif;color:#f5f0e8;font-size:2.6rem;margin:0 0 1rem;line-height:1.2;">Lindenhof<br><span style="color:#c9a84c;">Stallservice</span></h2>
+      <h2 class="services-heading" style="font-family:'Playfair Display',serif;color:#f5f0e8;font-size:clamp(1.8rem,6vw,2.6rem);margin:0 0 1rem;line-height:1.2;">Lindenhof<br><span style="color:#c9a84c;">Stallservice</span></h2>
       <p style="color:rgba(245,240,232,.7);font-size:1.05rem;line-height:1.7;max-width:580px;margin:0 auto;">Sie sind nicht da und etwas liegt Ihnen auf dem Herzen? Tanjas Team kümmert sich — schnell, zuverlässig und mit Foto-Bestätigung per WhatsApp.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:3rem;">
       <div style="background:rgba(245,240,232,.06);border:1px solid rgba(201,168,76,.2);border-radius:14px;padding:1.5rem;text-align:center;transition:transform .2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
         <div style="font-size:2rem;margin-bottom:.6rem;">📸</div>
         <div style="color:#f5f0e8;font-weight:600;margin-bottom:.3rem;">Kontrollblick + Foto</div>
@@ -1253,7 +1400,7 @@
       </div>
     </div>
 
-    <div style="background:rgba(245,240,232,.05);border:1px solid rgba(201,168,76,.25);border-radius:16px;padding:2rem;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;justify-content:space-between;">
+    <div style="background:rgba(245,240,232,.05);border:1px solid rgba(201,168,76,.25);border-radius:16px;padding:1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;justify-content:space-between;">
       <div>
         <div style="color:#c9a84c;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;">So wird's funktionieren</div>
         <div style="color:#f5f0e8;font-size:.95rem;line-height:1.7;">
@@ -1320,11 +1467,11 @@
             </p>
           </div>
         </div>
-        <div style="margin-top:2rem">
+        <div class="kontakt-cta-row" style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:.8rem;">
           <a href="tel:+4917662346793" class="hero-cta" style="display:inline-flex;background:var(--green);color:var(--cream)">
             📞 Jetzt anrufen
           </a>
-          <a href="https://wa.me/4917662346793" target="_blank" class="hero-cta" style="display:inline-flex;background:#25D366;color:#fff;margin-left:1rem">
+          <a href="https://wa.me/4917662346793" target="_blank" class="hero-cta" style="display:inline-flex;background:#25D366;color:#fff">
             💬 WhatsApp
           </a>
         </div>
