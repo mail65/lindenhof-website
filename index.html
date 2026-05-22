@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pferdesportanlage Lindenhof – Hamburg Nord</title>
+  <title>Pferdesportanlage Lindenhof – Hamburg Nord | Tangstedt</title>
   <meta name="description" content="Pferdesportanlage Lindenhof in Tangstedt bei Hamburg – artgerechte Pferdehaltung, professioneller Reitunterricht, 40 ha Weide, 60 km Reitwege.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,8 +123,8 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/backgroundarea/i71e91f9b06a1f89e/version/1739988468/image.jpg');
-      background-size: cover; background-position: center;
+      background-image: url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1920&auto=format&fit=crop&q=80');
+      background-size: cover; background-position: center 30%;
       transform: scale(1.08); transition: transform 12s ease-out;
     }
     #hero:hover .hero-bg { transform: scale(1.0); }
@@ -217,10 +217,11 @@
       box-shadow: 0 20px 60px var(--shadow);
     }
     .willkommen-badge {
-      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      position: absolute; bottom: -1.2rem; right: 1rem;
       background: var(--green); color: var(--cream); padding: 1.2rem 1.6rem;
       text-align: center; border-radius: 2px;
       box-shadow: 0 8px 30px rgba(0,0,0,.25);
+      z-index: 2;
     }
     .willkommen-badge .big { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold); }
     .willkommen-badge .small { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
@@ -352,9 +353,12 @@
       width: 100%; height: 260px; object-fit: cover; object-position: top;
     }
     .team-img-placeholder {
-      width: 100%; height: 260px; background: var(--green);
+      width: 100%; height: 260px; background: var(--green3);
       display: flex; align-items: center; justify-content: center;
       font-size: 5rem; color: rgba(245,240,232,.25);
+    }
+    .team-card .team-img[src=''], .team-card .team-img[src='#'] {
+      display: none;
     }
     .team-info { padding: 1.6rem; }
     .team-info h3 {
@@ -414,7 +418,9 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: 220px;
-      gap: .5rem;
+      gap: .6rem;
+      border-radius: 4px;
+      overflow: hidden;
     }
     .gallery-item {
       position: relative; overflow: hidden; border-radius: 2px; cursor: pointer;
@@ -428,8 +434,13 @@
     .gallery-item:hover img { transform: scale(1.08); }
     .gallery-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(26,58,42,.7), transparent);
+      background: linear-gradient(to top, rgba(26,58,42,.85) 0%, transparent 60%);
       opacity: 0; transition: opacity .3s;
+      display: flex; align-items: flex-end; padding: 1rem;
+    }
+    .gallery-caption {
+      color: var(--cream); font-family: 'Playfair Display', serif;
+      font-size: .95rem; font-style: italic; letter-spacing: .05em;
     }
     .gallery-item:hover .gallery-overlay { opacity: 1; }
 
@@ -538,6 +549,9 @@
       .willkommen-badge { right: 1rem; bottom: -1rem; }
       .events-cols { grid-template-columns: 1fr; }
       .kontakt-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+      .gallery-item:nth-child(1) { grid-column: span 2; }
+      .gallery-item:nth-child(5) { grid-column: span 2; }
     }
     @media (max-width: 700px) {
       section { padding: 4rem 0; }
@@ -630,7 +644,7 @@
           src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ibcd69f0295fe7032/version/1739987502/image.jpg"
           alt="Pferdesportanlage Lindenhof – Idyllische Anlage im Hamburger Norden"
           loading="lazy"
-          onerror="this.src='https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&auto=format&fit=crop'"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800&auto=format&fit=crop&q=80'"
         >
         <div class="willkommen-badge">
           <div class="big">1971</div>
@@ -643,6 +657,24 @@
         <p class="lead">Auf unserer idyllischen Anlage im Norden von Hamburg können Sie die schöne, besondere Zeit mit Ihrem Pferd mit artgerechter Haltung perfekt kombinieren.</p>
         <p>Großzügige Hallen und Außenplätze, professioneller Unterricht, unsere ganzjährige 40 ha Weide direkt am Stall und 60 km herrliche Reitwege im Alster- und Forstgebiet bieten Ihnen hierzu optimale Bedingungen.</p>
         <p>Als Familienbetrieb in 4. Generation verbinden wir Tradition mit modernem Stallmanagement. Unser Ziel: ein Ort, an dem Pferde glücklich sind und Menschen aufatmen können.</p>
+        <div style="display:flex;gap:2rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--cream2);">
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);">90</div>
+            <div style="font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#777;">Boxen</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);">40 ha</div>
+            <div style="font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#777;">Weide</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);">60 km</div>
+            <div style="font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#777;">Reitwege</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);">4</div>
+            <div style="font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#777;">Generationen</div>
+          </div>
+        </div>
         <div class="signature">Tanja van den Eijnde-Pieper &amp; Team</div>
       </div>
     </div>
@@ -880,13 +912,8 @@
     </div>
     <div class="team-grid">
       <div class="team-card">
-        <img 
-          class="team-img" 
-          src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ie1a993ad08b7536a/version/1768549777/image.jpg"
-          alt="Tanja van den Eijnde-Pieper, Inhaberin"
-          loading="lazy"
-          onerror="this.onerror=null; this.parentNode.querySelector('.team-img').style.display='none'; this.parentNode.querySelector('.team-img-placeholder').style.display='flex';"
-        >
+        <div class="team-img" style="background:var(--green3);display:flex;align-items:center;justify-content:center;font-size:4rem;color:rgba(245,240,232,.2);">🐴</div>
+        <!-- team photo hidden - using placeholder -->
         <div class="team-info">
           <h3>Tanja van den Eijnde-Pieper</h3>
           <div class="role">Inhaberin &amp; Geschäftsführerin</div>
@@ -900,7 +927,7 @@
           src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i2f82d96f001ac868/version/1565771279/image.jpg"
           alt="Kristiane Hartwig, Pferdewirtschaftsmeisterin"
           loading="lazy"
-          onerror="this.style.display='none'"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?w=400&auto=format&fit=crop&q=80'"
         >
         <div class="team-info">
           <h3>Kristiane Hartwig</h3>
@@ -915,7 +942,7 @@
           src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i186d2d97562ab6d0/version/1588439082/image.jpg"
           alt="Cathrin Kirchner-Salzmann, Vielseitigkeitsreiterin"
           loading="lazy"
-          onerror="this.style.display='none'"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400&auto=format&fit=crop&q=80'"
         >
         <div class="team-info">
           <h3>Cathrin Kirchner-Salzmann</h3>
@@ -929,7 +956,7 @@
           src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ib1a8258b750235b6/version/1565771333/image.jpg"
           alt="Peer Ahnert, Pferdewirtschaftsmeister"
           loading="lazy"
-          onerror="this.style.display='none'"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1449758498009-84f61c72cb04?w=400&auto=format&fit=crop&q=80'"
         >
         <div class="team-info">
           <h3>Peer Ahnert</h3>
@@ -938,13 +965,12 @@
         </div>
       </div>
       <div class="team-card">
-        <div class="team-img-placeholder" style="display:none">🤸</div>
         <img 
           class="team-img" 
           src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ibea1e31cc1b08c76/version/1565771014/image.jpg"
           alt="Sabine Diercks, Trainerin A"
           loading="lazy"
-          onerror="this.style.display='none'"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1598974357801-cbca100e65d3?w=400&auto=format&fit=crop&q=80'"
         >
         <div class="team-info">
           <h3>Sabine Diercks</h3>
@@ -1019,52 +1045,44 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i754a5dd66c0f383e/version/1617641613/image.jpg" 
-             alt="Pferdesportanlage Lindenhof" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop'">
-        <div class="gallery-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=900&auto=format&fit=crop&q=85" 
+             alt="Pferdesportanlage Lindenhof – Pferde auf der Weide" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-caption">Auf der Weide</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/if416eee65ba6ad89/version/1617641613/image.jpg" 
-             alt="Reithalle Lindenhof" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=600&auto=format&fit=crop'">
-        <div class="gallery-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1449758498009-84f61c72cb04?w=600&auto=format&fit=crop&q=85" 
+             alt="Pferde auf dem Lindenhof" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-caption">Herde</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ibc474d6955cac98a/version/1617641613/image.jpg" 
-             alt="Weide Lindenhof" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1530088943190-1727b37a4c62?w=600&auto=format&fit=crop'">
-        <div class="gallery-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1598974357801-cbca100e65d3?w=600&auto=format&fit=crop&q=85" 
+             alt="Reithalle Lindenhof" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-caption">Stall</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ie494294aafb97347/version/1617641613/image.jpg" 
-             alt="Springplatz Lindenhof" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1499590633038-3a22c51ca8ab?w=600&auto=format&fit=crop'">
-        <div class="gallery-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?w=600&auto=format&fit=crop&q=85" 
+             alt="Pferd Portrait Lindenhof" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-caption">Unsere Pferde</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i393d91f8f52afc3b/version/1617641613/image.jpg" 
-             alt="Pferde auf der Koppel" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=800&auto=format&fit=crop'">
-        <div class="gallery-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=900&auto=format&fit=crop&q=85" 
+             alt="Reitunterricht Lindenhof" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-caption">Reitunterricht</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i5f2198f323b2bca6/version/1617641613/image.jpg" 
-             alt="Reiten bei Sonnenuntergang" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=600&auto=format&fit=crop'">
-        <div class="gallery-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&auto=format&fit=crop&q=85" 
+             alt="Sonnenuntergang auf dem Lindenhof" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-caption">Abendstimmung</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/ib833c4d1e24f794f/version/1617641613/image.jpg" 
-             alt="Stallanlage" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1566963401020-d9d9b6cdda1e?w=600&auto=format&fit=crop'">
-        <div class="gallery-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=600&auto=format&fit=crop&q=85" 
+             alt="Ausritt im Wald" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-caption">Waldausritt</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox(this)">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/image/i115199b8dfe00417/version/1617641613/image.jpg" 
-             alt="Dressurviereck" loading="lazy"
-             onerror="this.src='https://images.unsplash.com/photo-1511165030972-5ff32fd6c5b1?w=600&auto=format&fit=crop'">
-        <div class="gallery-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1511165030972-5ff32fd6c5b1?w=600&auto=format&fit=crop&q=85" 
+             alt="Spring- und Dressurplatz" loading="lazy">
+        <div class="gallery-overlay"><span class="gallery-caption">Trainingsplatz</span></div>
       </div>
     </div>
   </div>
@@ -1292,7 +1310,7 @@
           <div class="info-icon">✉️</div>
           <div>
             <h4>E-Mail</h4>
-            <p>info@pferdesport-lindenhof.de</p>
+            <a href="mailto:info@pferdesport-lindenhof.de">info@pferdesport-lindenhof.de</a>
           </div>
         </div>
         <div class="info-item">
@@ -1323,7 +1341,7 @@
       </div>
       <div class="map-wrap">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2356.8!2d10.0756!3d53.7361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zLindenallee+17%2C+22889+Tangstedt!5e0!3m2!1sde!2sde!4v1!5m2!1sde!2sde&q=Lindenallee+17,+22889+Tangstedt" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2471.5!2d10.072!3d53.7419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1ba6c0f2a5555%3A0x0!2sLindenallee+17%2C+22889+Tangstedt!5e0!3m2!1sde!2sde!4v1717000000000!5m2!1sde!2sde" 
           allowfullscreen="" 
           loading="lazy" 
           referrerpolicy="no-referrer-when-downgrade"
@@ -1348,7 +1366,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Pferdesportanlage Lindenhof · Familie van den Eijnde</span>
+    <span>© 2026 Pferdesportanlage Lindenhof · Familie van den Eijnde</span>
     <span>Lindenallee 17 · 22889 Tangstedt</span>
   </div>
 </footer>
@@ -1409,9 +1427,20 @@
   });
   document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 
-  // Parallax effect on hero background
+  // Hero background + parallax
   const heroBg = document.getElementById('heroBg');
   if (heroBg) {
+    // Try to load original jimcdn image, fall back to Unsplash
+    const heroImg = new Image();
+    heroImg.onload = function() {
+      heroBg.style.backgroundImage = `url('${heroImg.src}')`;
+    };
+    heroImg.onerror = function() {
+      // keep the Unsplash fallback that is already set
+    };
+    heroImg.src = 'https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/backgroundarea/i71e91f9b06a1f89e/version/1739988468/image.jpg';
+
+    // Parallax scroll
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       if (scrollY < window.innerHeight) {
@@ -1426,14 +1455,15 @@
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.feature-card, .philo-card, .leistung-card, .team-card, .gallery-item').forEach(el => {
+  document.querySelectorAll('.feature-card, .philo-card, .leistung-card, .team-card, .gallery-item').forEach((el, i) => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity .6s ease, transform .6s ease';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = `opacity .55s ease ${(i % 4) * 0.08}s, transform .55s ease ${(i % 4) * 0.08}s`;
     observer.observe(el);
   });
 </script>
