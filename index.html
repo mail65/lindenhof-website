@@ -34,6 +34,8 @@
       color: var(--text);
       background: var(--cream);
       overflow-x: hidden;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
@@ -582,10 +584,15 @@
       .section-title { font-size: clamp(1.6rem, 6vw, 2rem); }
       .section-header { margin-bottom: 2.5rem; }
 
+      /* Willkommen text */
+      .willkommen-text { overflow-wrap: break-word; word-break: break-word; }
+      .willkommen-text p { overflow-wrap: break-word; }
+      .lead { overflow-wrap: break-word; }
+
       /* Willkommen stats row */
       .willkommen-stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
         gap: 1rem;
       }
       .willkommen-stats > div { text-align: center; }
@@ -779,7 +786,7 @@
         <p class="lead">Auf unserer idyllischen Anlage im Norden von Hamburg können Sie die schöne, besondere Zeit mit Ihrem Pferd mit artgerechter Haltung perfekt kombinieren.</p>
         <p>Großzügige Hallen und Außenplätze, professioneller Unterricht, unsere ganzjährige 40 ha Weide direkt am Stall und 60 km herrliche Reitwege im Alster- und Forstgebiet bieten Ihnen hierzu optimale Bedingungen.</p>
         <p>Als Familienbetrieb in 4. Generation verbinden wir Tradition mit modernem Stallmanagement. Unser Ziel: ein Ort, an dem Pferde glücklich sind und Menschen aufatmen können.</p>
-        <div class="willkommen-stats" style="display:flex;gap:2rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--cream2);">
+        <div class="willkommen-stats" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--cream2);">
           <div style="text-align:center;">
             <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--green);">90</div>
             <div style="font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#777;">Boxen</div>
