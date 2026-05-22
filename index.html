@@ -48,24 +48,22 @@
     ═══════════════════════════════════════════ */
     #nav {
       position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      transition: background .4s, box-shadow .4s, padding .3s;
-      padding: 1.4rem 0;
+      background: #0e2b18;
+      box-shadow: 0 2px 20px rgba(0,0,0,.35);
+      transition: padding .3s;
+      padding: .6rem 0;
     }
     #nav.scrolled {
-      background: rgba(26,58,42,.97);
-      box-shadow: 0 2px 20px rgba(0,0,0,.3);
-      padding: .8rem 0;
+      padding: .4rem 0;
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto; padding: 0 2rem;
       display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem; color: var(--cream); letter-spacing: .05em;
-      display: flex; align-items: center; gap: .5rem;
+      display: flex; align-items: center;
     }
-    .nav-logo .logo-icon { font-size: 1.6rem; }
+    .nav-logo img { height: 68px; width: auto; display: block; }
     .nav-links {
       display: flex; gap: 2rem; list-style: none;
     }
@@ -545,7 +543,7 @@
 <nav id="nav">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
-      <img src="logo.png" alt="Lindenhof Logo" style="height:52px;width:auto;">
+      <img src="logo.png" alt="Lindenhof Logo">
       Lindenhof
     </a>
     <ul class="nav-links">
