@@ -65,13 +65,26 @@
     }
     .nav-logo img { height: 68px; width: auto; display: block; }
     .nav-links {
-      display: flex; gap: 2rem; list-style: none;
+      display: flex; gap: 1.4rem; list-style: none;
     }
     .nav-links a {
-      color: rgba(245,240,232,.85); font-size: .88rem; letter-spacing: .08em;
+      color: rgba(245,240,232,.85); font-size: .8rem; letter-spacing: .06em;
       text-transform: uppercase; transition: color .25s; font-weight: 700;
     }
     .nav-links a:hover { color: var(--gold); }
+    .nav-pills {
+      display: flex; align-items: center; gap: .4rem; margin-left: .8rem;
+    }
+    .nav-pill {
+      background: rgba(201,168,76,.18);
+      border: 1px solid rgba(201,168,76,.45);
+      color: #c9a84c;
+      font-size: .75rem; font-weight: 700; letter-spacing: .06em;
+      padding: 4px 10px; border-radius: 20px;
+      transition: background .2s, color .2s;
+      white-space: nowrap;
+    }
+    .nav-pill:hover { background: #c9a84c; color: #0e2b18; }
     .nav-burger {
       display: none; flex-direction: column; gap: 5px; cursor: pointer;
       background: none; border: none; padding: 4px;
@@ -518,6 +531,7 @@
     ═══════════════════════════════════════════ */
     @media (max-width: 900px) {
       .nav-links { display: none; }
+      .nav-pills { display: none; }
       .nav-burger { display: flex; }
       .willkommen-grid { grid-template-columns: 1fr; gap: 3rem; }
       .willkommen-img-wrap img { height: 340px; }
@@ -544,7 +558,6 @@
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
       <img src="logo.png" alt="Lindenhof Logo">
-      Lindenhof
     </a>
     <ul class="nav-links">
       <li><a href="#willkommen">Willkommen</a></li>
@@ -553,11 +566,13 @@
       <li><a href="#team">Team</a></li>
       <li><a href="#events">Veranstaltungen</a></li>
       <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#services" style="color:#c9a84c;">★ Stallservice</a></li>
-      <li><a href="#wetter" style="color:#c9a84c;">🌤 Wetter</a></li>
-      <li><a href="#livecam" style="color:#c9a84c;">📷 Live-Cam</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
+    <div class="nav-pills">
+      <a href="#services" class="nav-pill">★ Service</a>
+      <a href="#wetter" class="nav-pill">🌤</a>
+      <a href="#livecam" class="nav-pill">📷</a>
+    </div>
     <button class="nav-burger" id="burgerBtn" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
     </button>
@@ -573,9 +588,9 @@
   <a href="#team" class="mobile-link">Team</a>
   <a href="#events" class="mobile-link">Veranstaltungen</a>
   <a href="#galerie" class="mobile-link">Galerie</a>
-  <a href="#services" class="mobile-link" style="color:#c9a84c;">★ Stallservice</a>
-  <a href="#wetter" class="mobile-link" style="color:#c9a84c;">🌤 Wetter</a>
-  <a href="#livecam" class="mobile-link" style="color:#c9a84c;">📷 Live-Cam</a>
+  <a href="#services" class="mobile-link">★ Stallservice</a>
+  <a href="#wetter" class="mobile-link">🌤 Wetter</a>
+  <a href="#livecam" class="mobile-link">📷 Live-Cam</a>
   <a href="#kontakt" class="mobile-link">Kontakt</a>
 </div>
 
