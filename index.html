@@ -127,7 +127,11 @@
       position: absolute; inset: 0;
       background-image: url('hero-bg.jpg');
       background-size: cover; background-position: center 30%;
-      transform: scale(1.08); transition: transform 12s ease-out;
+      animation: heroFlyover 4s ease-out forwards;
+    }
+    @keyframes heroFlyover {
+      0%   { transform: scale(1.14) translateY(-18px); }
+      100% { transform: scale(1.08) translateY(0px); }
     }
     #hero:hover .hero-bg { transform: scale(1.0); }
     .hero-overlay {
@@ -1604,12 +1608,13 @@
     if (Math.abs(diff) > 40) lightboxNav(diff > 0 ? 1 : -1);
   }, {passive:true});
 
-  // Hero parallax scroll
+  // Hero: entrance animation on load + parallax on scroll
   const heroBg = document.getElementById('heroBg');
   if (heroBg) {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       if (scrollY < window.innerHeight) {
+        heroBg.style.animation = 'none'; // hand off to JS parallax
         heroBg.style.transform = `scale(1.08) translateY(${scrollY * 0.3}px)`;
       }
     }, { passive: true });
