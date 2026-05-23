@@ -208,22 +208,28 @@
     ═══════════════════════════════════════════ */
     #willkommen { background: var(--cream); }
     .willkommen-grid {
-      max-width: 780px; margin: 0 auto; text-align: center;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: center;
     }
-    .willkommen-founded {
-      display: inline-flex; align-items: center; gap: .8rem;
-      background: var(--green); color: var(--cream);
-      padding: .6rem 1.4rem; border-radius: 2px;
-      margin-bottom: 2rem;
+    .willkommen-img-wrap { position: relative; }
+    .willkommen-img-wrap img {
+      width: 100%; height: 480px; object-fit: cover; border-radius: 3px;
+      box-shadow: 0 20px 60px var(--shadow);
     }
-    .willkommen-founded .big { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); }
-    .willkommen-founded .small { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+    .willkommen-badge {
+      position: absolute; bottom: -1.2rem; right: 1rem;
+      background: var(--green); color: var(--cream); padding: 1.2rem 1.6rem;
+      text-align: center; border-radius: 2px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.25); z-index: 2;
+    }
+    .willkommen-badge .big { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--gold); }
+    .willkommen-badge .small { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
     .willkommen-text h2 { color: var(--green); margin-bottom: 1rem; }
     .willkommen-text .lead {
       font-size: 1.15rem; font-style: italic; color: var(--green2);
-      margin-bottom: 1.5rem; line-height: 1.8;
+      margin-bottom: 1.5rem; line-height: 1.7;
     }
-    .willkommen-text p { margin-bottom: 1rem; color: #444; line-height: 1.8; }
+    .willkommen-text p { margin-bottom: 1rem; color: #444; }
     .signature {
       font-family: 'Playfair Display', serif; font-style: italic;
       font-size: 1.4rem; color: var(--green2); margin-top: 1.8rem;
@@ -562,7 +568,10 @@
       .nav-links { display: none; }
       .nav-pills { display: none; }
       .nav-burger { display: flex; }
-      .willkommen-grid { max-width: 100%; }
+      .willkommen-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .willkommen-img-wrap { margin-left: -1rem; margin-right: -1rem; width: calc(100% + 2rem); }
+      .willkommen-img-wrap img { height: 300px; border-radius: 0; width: 100%; }
+      .willkommen-badge { bottom: 0; }
       .events-cols { grid-template-columns: 1fr; }
       .kontakt-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
@@ -777,11 +786,14 @@
 <section id="willkommen">
   <div class="section-inner">
     <div class="willkommen-grid">
-      <div class="willkommen-text">
-        <div class="willkommen-founded">
-          <span class="big">1971</span>
-          <span class="small">Seit 1971 im Hamburger Norden</span>
+      <div class="willkommen-img-wrap">
+        <img src="willkommen.jpg" alt="Pferdesportanlage Lindenhof – Luftbild Hamburger Norden" loading="lazy">
+        <div class="willkommen-badge">
+          <div class="big">1971</div>
+          <div class="small">Gegründet</div>
         </div>
+      </div>
+      <div class="willkommen-text">
         <div class="section-tag">Herzlich Willkommen</div>
         <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem">Ihr Zuhause<br>für Pferd &amp; Reiter</h2>
         <p class="lead">Auf unserer idyllischen Anlage im Norden von Hamburg können Sie die schöne, besondere Zeit mit Ihrem Pferd mit artgerechter Haltung perfekt kombinieren.</p>
