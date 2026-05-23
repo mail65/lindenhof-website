@@ -125,7 +125,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/backgroundarea/i71e91f9b06a1f89e/version/1739988468/image.jpg');
+      background-image: url('hero-bg.jpg');
       background-size: cover; background-position: center 30%;
       transform: scale(1.08); transition: transform 12s ease-out;
     }
@@ -1608,20 +1608,9 @@
     if (Math.abs(diff) > 40) lightboxNav(diff > 0 ? 1 : -1);
   }, {passive:true});
 
-  // Hero background + parallax
+  // Hero parallax scroll
   const heroBg = document.getElementById('heroBg');
   if (heroBg) {
-    // Try to load original jimcdn image, fall back to Unsplash
-    const heroImg = new Image();
-    heroImg.onload = function() {
-      heroBg.style.backgroundImage = `url('${heroImg.src}')`;
-    };
-    heroImg.onerror = function() {
-      // keep the Unsplash fallback that is already set
-    };
-    heroImg.src = 'https://image.jimcdn.com/app/cms/image/transf/none/path/sad9fe31f1d36e0de/backgroundarea/i71e91f9b06a1f89e/version/1739988468/image.jpg';
-
-    // Parallax scroll
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       if (scrollY < window.innerHeight) {
